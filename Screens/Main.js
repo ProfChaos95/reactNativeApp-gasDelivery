@@ -17,9 +17,7 @@ function Main({navigation}) {
     if (num.length == 10) {
     setModalVisible(true)
     }
-    // if (email === usermail && password === userpassword) {
-    //   navigation.navigate('Page2')
-    // }
+
   }
 
   return (
