@@ -10,7 +10,14 @@ import {
 } from 'react-native';
 
 export const OtpPopup = ({modalVisible, setModalVisible}) => {
+  // otp is cuurently forced to true.need to a otp function
+  const [otp,varifyOtp]= useState(true)
   // const [modalVisible, setModalVisible] = useState(true);
+  function otpValidation(){
+    if (otp === true) {
+      setModalVisible(false);
+    }
+  }
   return (
     <Modal animationType="slide" transparent={true} visible={modalVisible}>
       <View style={styles.modalViewmain}>
@@ -24,7 +31,7 @@ export const OtpPopup = ({modalVisible, setModalVisible}) => {
           </View>
           <Pressable
             style={[styles.button1, styles.buttonClose]}
-            onPress={() => setModalVisible(false)}>
+            onPress={otpValidation}>
             <Text style={styles.textStyle}>Hide Modal</Text>
           </Pressable>
           <Text style={styles.modalText}>Resent OTP</Text>

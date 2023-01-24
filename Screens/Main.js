@@ -13,9 +13,9 @@ function Main({navigation}) {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
 
-  function Login(num) {
-    if (num.length == 10) {
-    setModalVisible(true)
+  function Login() {
+    if (phoneNumber.length == 10) {
+      setModalVisible(true);
     }
     // if (email === usermail && password === userpassword) {
     //   navigation.navigate('Page2')
@@ -37,13 +37,9 @@ function Main({navigation}) {
           keyboardType="email-address"
         />
         {/* <Text style={styles.label}>Password</Text> */}
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => Login(phoneNumber)}>
+        <TouchableOpacity style={styles.button} onPress={Login}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
-        <Text style={{color: '#F2515A', paddingVertical: 20}}>Sign In</Text>
-        <Text>Forgot your password?</Text>
       </View>
       <OtpPopup modalVisible={modalVisible} setModalVisible={setModalVisible} />
     </View>
